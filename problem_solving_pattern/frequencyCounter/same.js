@@ -42,7 +42,6 @@ function same2(arr1, arr2) {  //시간복잡도 O(n)
 
         // 각 값의 빈도가 동일하지 않다면 false 반환
         if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
-
             return false;
         }
     }
