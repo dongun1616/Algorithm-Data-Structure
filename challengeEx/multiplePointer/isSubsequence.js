@@ -1,6 +1,6 @@
 //첫 번째 문자열이 문자가 두 번째 문자열의 문자의 일부에 포함되는지 확인하는 함수
 // 다중포인터 고유값
-function isSubsequence(str1, str2) {
+function isSubsequence(str1, str2) { //시간복잡도 O(n)
     //두 번째 문자열의 길이가 첫번째 문자열보다 짧은경우 false를 반환
     if (str1.length > str2.length) return false;
     //문자열1과 문자열2 포인터 선언
