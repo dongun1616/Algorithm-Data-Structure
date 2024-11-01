@@ -2,7 +2,7 @@
 //재귀
 function reverse(str) {
     let end = str.length - 1
-    //종료조건 str의 길이가 0인경우 null
+    //종료조건 str의 길이가 0인경우 
     if (str.length < 2) return str;
     //재귀방식 str끝 + reverse(끝을 자른 문자열)을 반환
     return str[end] + reverse(str.slice(0, -1));
