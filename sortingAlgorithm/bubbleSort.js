@@ -18,4 +18,5 @@ function bubbleSort(arr) { //시간복잡도 O(n^2)
     return arr;
 }
 
+
 console.log(bubbleSort([24, 15, 1, 4, 6, 13, 11]))
