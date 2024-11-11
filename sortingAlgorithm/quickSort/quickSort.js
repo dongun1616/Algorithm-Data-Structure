@@ -9,8 +9,12 @@ function pivot(arr, start = 0, end = arr.length - 1) {
         array[i] = array[j];
         array[j] = temp
     }
+    //중간 지점 설정
+    let middle = Math.floor((start + end) / 2)
     //배열 맨 앞을 피벗으로 선택
-    let pivot = arr[start];
+    let pivot = arr[middle];
+    //피벗을 시작위치로 이동하여 정렬을 쉽게 수행
+    swap(arr, start, middle)
     //스왑 인덱스를 변수로 저장
     let swapIdx = start;
     //루프 선회하는동안 피벗이 클경우 피벗 인덱스 변수를 증가시키고
