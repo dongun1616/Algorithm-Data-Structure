@@ -92,9 +92,9 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
-    //get 위치를 인자로 받아 노드를 반환하는 메소드
+    //get 인덱스를 인자로 받아 노드를 반환하는 메소드
     get(index) {
-        //index가 음수이거나 길이가 해당 인덱스보다 작거나 같으면 null반환
+        //index가 음수이거나 리스트의 길이보다 크거나 같으면 null반환
         if (index < 0 || index >= this.length) return null;
         let counter = 0;
         //리스트 순회
@@ -107,7 +107,7 @@ class SinglyLinkedList {
         }
         return current;
     }
-    //set 위치와 값을 인자로 받아 해당 위치에 값을 수정하는 메소드
+    //set 인덱스와 값을 인자로 받아 해당 인덱스에 값을 수정하는 메소드
     set(index, val) {
         //찾는 노드의 위치를 get메소드로 선언
         let foundNode = this.get(index)
@@ -117,12 +117,67 @@ class SinglyLinkedList {
         }
         return false;
     }
+    //insert 인덱스와 값을 인자로 받아 해당 인덱스에 값을 추가하고 앞뒤를 연결하는 메소드
+    insert(index, val) {
+        //index가 음수이거나 리스트의 길이보다 크면 false를 반환
+        if (index < 0 || index > this.length) return false
+        //index가 리스트의 길이와 같으면 push를 호출
+        if (index === this.length) return !!this.push(val) //!!는 값이 존재하면 true를 반환
+        //index가 0이면 unshift를 호출
+        if (index === 0) return !!this.unshift(val)
+        //노드를 생성
+        let newNode = new Node(val)
+        //리스트 중간에 추가하려면 get을 index-1로 호출
+        let prev = this.get(index - 1)
+        //노드를 임시 저장할 변수선언후 앞뒤에 연결
+        let temp = prev.next;
+        prev.next = newNode;
+        newNode.next = temp;
+        //길이 증가
+        this.length++;
+        return true
+    }
+    //remove 인덱스를 인자로 받아 해당 인덱스에 노드를 삭제하고 앞뒤를 연결하는 메소드
+    remove(index) {
+        //index가 0보다 작거나 길이보다 크거나 같으면 undefined 반환
+        if (index < 0 || index >= this.length) return undefined;
+        //index가 길이-1과 같으면 pop 호출
+        if (index === this.length - 1) return this.pop()
+        //index가 0이면 shift 호출
+        if (index === 0) return this.shift();
+        //중간 노드를 제거하려면 제거할 노드의 전 노드의 변수선언
+        let prev = this.get(index - 1);
+        //제거할 변수 선언
+        let removed = prev.next;
+        //제거할 이전 노드에 제거할 다음 노드 연결
+        prev.next = removed.next;
+        //길이 감소
+        this.length--;
+        //삭제한 노드 반환
+        return removed;
+    }
+    //reverse 단일 연결 리스트를 역방향으로 바꾸는 메소드
+    reverse() {
+        //head와 tail 스왑
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        //next값과 prev값을 담아둘 변수 생성
+        let next;
+        let prev = null;
+        //리스트 순회하며 스왑
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
-list.unshift("third")
-list.unshift("second")
-list.unshift("first")
-console.log(list)
-console.log(list.set(2, "three"));
-console.log(list.get(2))
+list.push("first")
+list.push("second")
+list.push("third")
+console.log(list.reverse())
