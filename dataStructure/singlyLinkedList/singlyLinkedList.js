@@ -1,13 +1,13 @@
 //단일 연결 리스트 메소드
 
-//노드 클래스 예시
+//노드 클래스
 class Node {
     constructor(val) {
         this.val = val;
         this.next = null;
     }
 }
-//단일 연결 리스트 예시
+//단일 연결 리스트
 class SinglyLinkedList {
     constructor() {
         this.head = null;
@@ -21,7 +21,7 @@ class SinglyLinkedList {
         //리스트에 첫 추가시 헤드와 태일 선언
         if (!this.head) {
             this.head = newNode;
-            this.tail = this.head;
+            this.tail = newNode;
         }
         else {
             //tail의 next를 추가하는 노드로 선언
@@ -179,6 +179,4 @@ class SinglyLinkedList {
 
 let list = new SinglyLinkedList();
 list.push("first")
-list.push("second")
-list.push("third")
-console.log(list.reverse())
+console.log(list)
