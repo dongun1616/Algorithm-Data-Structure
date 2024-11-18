@@ -196,7 +196,6 @@ class DoublyLinkedList {
 let list = new DoublyLinkedList();
 list.push("one")
 list.push("two")
-list.push("lolol")
 list.push("three")
-console.log(list.remove(2));
+console.log(list.shift());
 console.log(list.get(2));
