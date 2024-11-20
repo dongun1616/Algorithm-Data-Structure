@@ -38,7 +38,7 @@ class BinarySearchTree {
                         current.left = newNode;
                         return this;
                     }
-                    //아니라면 순회
+                    //아니라면 left로 순회
                     current = current.left
                 }
                 //값이 current보다 크면
@@ -49,11 +49,38 @@ class BinarySearchTree {
                         current.right = newNode;
                         return this;
                     }
-                    //아니라면 순회
+                    //아니라면 right로 순회
                     current = current.right;
                 }
             }
         }
+    }
+    //이진 탐색 트리에서 해당 값이 트리에 있는지를 탐색하는 메소드
+    find(val) {
+        //루트가 null이면 false를 반환
+        if (this.root === null) return false;
+        //순회할 노드 선언
+        let current = this.root;
+        //탐색을 확인하는 불리언
+        let found = false;
+        //탐색을 순회하는 루프
+        while (current && !found) {
+            //해당 값이 current보다 작으면 left로 순회
+            if (val < current.val) {
+                current = current.left;
+            }
+            //해당 값이 current보다 크면 right로 순회
+            else if (val > current.val) {
+                current = current.right;
+            }
+            //같다면 탐색 불리언을 true로 선언
+            else {
+                found = true;
+            }
+        }
+        //찾지 못했다면 undefined를 반환
+        if (!found) return undefined;
+        return current;
     }
 }
 
@@ -64,4 +91,4 @@ tree.insert(15)
 tree.insert(7)
 tree.insert(11)
 tree.insert(2)
-console.log(tree);
+console.log(tree.find(15));
