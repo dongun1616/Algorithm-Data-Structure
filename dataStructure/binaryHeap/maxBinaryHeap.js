@@ -33,7 +33,6 @@ class MaxBinaryHeap {
         }
     }
 }
-
 let heap = new MaxBinaryHeap();
 console.log(heap.insert(55));
 console.log(heap.insert(199));
