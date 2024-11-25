@@ -92,6 +92,7 @@ class MaxBinaryHeap {
         }
     }
 }
+
 let heap = new MaxBinaryHeap();
 console.log(heap.extractMax());
 console.log(heap.vals);
