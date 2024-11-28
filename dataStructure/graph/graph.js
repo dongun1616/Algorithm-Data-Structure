@@ -54,7 +54,6 @@ class Graph {
         return this
     }
 }
-
 let g = new Graph();
 g.addVertex('Tokyo')
 g.addVertex('Seoul')
