@@ -174,6 +174,35 @@ class SinglyLinkedList {
         }
         return this;
     }
+    //rotate 모든 노드를 주어진 숫자만큼 회전시키는 메소드
+    rotate(n) {
+        // 유효한 회전 값 계산 (음수 및 길이 초과 처리)
+        const effectiveRotations = ((n % this.length) + this.length) % this.length;
+
+        // 회전이 필요 없는 경우 바로 반환
+        if (effectiveRotations === 0 || this.length < 2) return this;
+
+        // 기존 tail을 현재 head로 연결해 리스트를 원형으로 만듦
+        this.tail.next = this.head;
+
+        // 새로운 tail을 찾기 위해 이동할 횟수 계산
+        const newTailPosition = this.length - effectiveRotations;
+        let newTail = this.head;
+
+        // 새로운 tail로 이동
+        for (let i = 1; i < newTailPosition; i++) {
+            newTail = newTail.next;
+        }
+
+        // 새로운 head 설정
+        this.head = newTail.next;
+
+        // 새로운 tail의 연결을 끊어 리스트를 다시 선형으로 만듦
+        this.tail = newTail;
+        this.tail.next = null;
+
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -181,4 +210,4 @@ list.push("1")
 list.push("2")
 list.push("3")
 list.push("4")
-console.log(list.get(0))
+console.log(list.rotate(2))
