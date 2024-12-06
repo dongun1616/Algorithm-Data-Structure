@@ -204,6 +204,7 @@ class SinglyLinkedList {
         return this;
     }
 }
+
 let list = new SinglyLinkedList();
 list.push("1")
 list.push("2")
