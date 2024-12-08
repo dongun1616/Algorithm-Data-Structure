@@ -1,11 +1,11 @@
 //동적 프로그래밍 
 
 //피보나치 수열 예제(재귀)
-function fib1(n) {
+function fib(n) {
     //n이 2이하이면 1반환
     if (n <= 2) return 1;
     //피보나치 계산법으로 재귀
-    return fib1(n - 1) + fib1(n - 2)
+    return fib(n - 1) + fib(n - 2)
 }
 
 //피보나치 수열 예제 재귀 (메모이제이션) 하향식 접근
@@ -34,5 +34,5 @@ function fib_table(n) {
     return fibNums[n];
 }
 
-// console.log(fib1(6));
+// console.log(fib(6));
 console.log(fib_table(6));
