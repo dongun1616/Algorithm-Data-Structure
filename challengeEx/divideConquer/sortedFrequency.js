@@ -20,5 +20,4 @@ function sortedFrequency(arr, num) {
     //합산 값이 0개면 -1을반환 아니면 그대로 반환
     return count === 0 ? -1 : count;
 }
-
 console.log(sortedFrequency([1, 1, 2, 2, 2, 2, 3], 2))
