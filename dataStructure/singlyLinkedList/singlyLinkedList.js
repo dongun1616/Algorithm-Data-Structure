@@ -101,6 +101,8 @@ class SinglyLinkedList {
         let current = this.head;
         //카운터와 인덱스가 같지 않는 경우 순회
         while (counter !== index) {
+            // current.next가 null인 경우 중단
+            if (!current.next) return null;
             current = current.next;
             //카운트 증가
             counter++;
@@ -140,13 +142,15 @@ class SinglyLinkedList {
     //remove 인덱스를 인자로 받아 해당 인덱스에 노드를 삭제하고 앞뒤를 연결하는 메소드
     remove(index) {
         //index가 0보다 작거나 길이보다 크거나 같으면 undefined 반환
-        if (index < 0 || index >= this.length) return undefined;
+        if (index < 0 || index >= this.length || !this.head) return undefined;
         //index가 길이-1과 같으면 pop 호출
         if (index === this.length - 1) return this.pop()
         //index가 0이면 shift 호출
         if (index === 0) return this.shift();
         //중간 노드를 제거하려면 제거할 노드의 전 노드의 변수선언
         let prev = this.get(index - 1);
+        // prev가 null이면 비정상적인 경우로 undefined 반환
+        if (!prev) return undefined;
         //제거할 변수 선언
         let removed = prev.next;
         //제거할 이전 노드에 제거할 다음 노드 연결
