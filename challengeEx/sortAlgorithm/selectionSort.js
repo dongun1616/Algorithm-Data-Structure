@@ -1,7 +1,8 @@
+//가장 작은 데이터를 찾아 가장 앞에 데이터와 교환해나가는 알고리즘
 //선택 정렬
 function selectionSort(arr, comparator) { //시간복잡도 O(n^2)
     //기본 비교기
-    if (typeof comparator !== 'function') {
+    if (typeof comparator === 'undefined') {
         comparator = (a, b) => a - b;
     }
     //최솟값과 비교하는 루프
@@ -54,4 +55,4 @@ function oldestToYoungest(a, b) {
     return b.age - a.age;
 }
 
-selectionSort(moarKittyData, oldestToYoungest); 
+console.log(selectionSort([22, 16, 12, 3, 7, 2, 1]))

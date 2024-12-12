@@ -1,7 +1,8 @@
+//인접한 두 요소를 비교하여 의도한 순서가 될 때까지 교체하는 정렬 알고리즘
 //버블 정렬
 function bubbleSort(arr, comparator) { //시간복잡도 O(n^2)
     //기본 비교기
-    if (typeof comparator !== 'function') {
+    if (typeof comparator === 'undefined') {
         comparator = (a, b) => a - b;
     }
     // 스왑을 했는지 확인하는 변수
@@ -50,4 +51,4 @@ function oldestToYoungest(a, b) {
 }
 
 
-console.log(bubbleSort(moarKittyData, oldestToYoungest))
+console.log(bubbleSort([22, 16, 12, 3, 7, 2, 1]))
