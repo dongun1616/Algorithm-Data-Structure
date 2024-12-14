@@ -37,5 +37,4 @@ function radixSort(nums) {
     }
     return nums;
 }
-
 console.log(radixSort([7323, 12, 23, 345, 11223, 5566]))
