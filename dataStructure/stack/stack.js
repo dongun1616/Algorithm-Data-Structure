@@ -27,8 +27,9 @@ class Stack {
         }
         else {
             //새롭게 생성된 노드의 next를 현재 first로 설정
-            newNode.next = this.first;
+            let temp = this.first;
             this.first = newNode;
+            this.first.next = temp;
         }
         //크기 증가
         return ++this.size;
@@ -55,5 +56,4 @@ class Stack {
 let stack = new Stack();
 console.log(stack.push("one"))
 console.log(stack.push("two"))
-console.log(stack.pop())
-console.log(stack)
+console.log(stack.size)
