@@ -25,14 +25,14 @@ class Stack {
             this.first = newNode;
             this.last = newNode;
         }
+        // 스택에 이미 노드가 있는 경우
         else {
-            //새롭게 생성된 노드의 next를 현재 first로 설정
-            let temp = this.first;
+            // 새 노드가 기존 맨 위 노드를 가리키도록 설정
+            newNode.next = this.first;
+            // 새 노드를 스택의 맨 위로 설정
             this.first = newNode;
-            this.first.next = temp;
         }
-        //크기 증가
-        return ++this.size;
+        return ++this.size; // 크기를 증가시키고 반환
     }
     //단일 연결 리스트에 shift와 똑같은 메소드
     //리스트 앞에서 삭제
