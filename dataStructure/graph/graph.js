@@ -140,6 +140,7 @@ class Graph {
         return result;
     }
 }
+
 let g = new Graph();
 g.addVertex('A')
 g.addVertex('B')
