@@ -24,4 +24,4 @@ function coinChange(denominations, value) {
 
 const denominations = [1, 5, 10, 25]
 
-console.log(coinChange(denominations, 100))
+console.log(coinChange(denominations, 20))
