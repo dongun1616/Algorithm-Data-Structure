@@ -21,7 +21,6 @@ function coinChange(denominations, value) {
     //dp 배열에서 목표값(value)에 대한 방법의 수를 반환합니다.
     return dp[value];
 }
-
 const denominations = [1, 5, 10, 25]
 
 console.log(coinChange(denominations, 20))
