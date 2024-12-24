@@ -1,3 +1,5 @@
+//다익스트라 알고리즘
+//주어진 값에 대해 거스름돈을 만들 수 있는 방법의 수를 알아내는 메소드
 function coinChange(denominations, value) {
     //각 값을 저장할 배열(dp)을 생성합니다.
     let dp = [];
