@@ -24,5 +24,4 @@ function sameFrequency(num1, num2) { //시간복잡도 O(n)
     // 다 통과하면 true를 반환
     return true;
 }
-
 console.log(sameFrequency(1237572, 1322775))
