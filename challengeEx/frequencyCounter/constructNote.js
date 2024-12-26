@@ -1,4 +1,4 @@
-// 빈도수 세기 방식으로 문자열을 비교하는 함수
+//주어진 문자로 메시지를 만들 수 있으면 true 그렇지 않으면 false를 반환하는 메소드
 function constructNote(msg, ltr) { //시간복잡도 O(n)
     // 카운팅할 객체를 선언
     let frequencyCounter1 = {}
