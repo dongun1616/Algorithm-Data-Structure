@@ -25,4 +25,5 @@ function findPair(arr, num) {
     //모두 통과하면 false를 반환
     return false;
 }
+
 console.log(findPair([6, 1, 4, 10, 2, 4], 2))
